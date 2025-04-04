@@ -2,7 +2,6 @@ from os import getenv
 from dotenv import load_dotenv
 
 from tronpy import Tron
-from tronpy.exceptions import BadAddress
 from tronpy.providers import HTTPProvider
 
 load_dotenv()

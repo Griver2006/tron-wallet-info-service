@@ -31,7 +31,11 @@ async def create_wallet_request(session: SessionDep, data: dict):
     return db_request
 
 
-async def get_wallet_requests(session: SessionDep, skip: int = 0, limit: int = 10):
+async def get_wallet_requests(
+        session: SessionDep,
+        skip: int = 0,
+        limit: int = 10
+):
     result = await session.execute(
         select(models.WalletRequest).offset(skip).limit(limit)
     )

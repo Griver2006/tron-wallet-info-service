@@ -13,7 +13,9 @@ async def test_post_wallets(client):
     }
 
     with patch("app.tron_client.get_wallet_info", return_value=mock_data):
-        response = await client.post("/wallets", json={"address": mock_data["address"]})
+        response = await client.post(
+            "/wallets", json={"address": mock_data["address"]}
+        )
         assert response.status_code == 200
         result = response.json()
         assert result["address"] == mock_data["address"]

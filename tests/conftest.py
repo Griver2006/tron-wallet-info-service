@@ -27,7 +27,8 @@ async def test_engine():
 @pytest_asyncio.fixture
 async def session(test_engine):
     """
-    Создаём отдельную сессию для каждого теста (автоматически откатываем транзакции).
+    Создаём отдельную сессию для каждого теста.
+    (автоматически откатываем транзакции)
     """
     test_session = async_sessionmaker(test_engine, expire_on_commit=False)
     async with test_session() as s:
@@ -37,7 +38,9 @@ async def session(test_engine):
 @pytest_asyncio.fixture
 def override_get_session(session):
     """
-    Переопределяем зависимость get_session так, чтобы она возвращала нашу тестовую сессию.
+    Переопределяем зависимость get_session.
+
+    Так, чтобы она возвращала нашу тестовую сессию.
     """
     async def _get_session_override():
         yield session

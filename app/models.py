@@ -24,4 +24,6 @@ class WalletRequest(Base):
     balance: Mapped[float]
     bandwidth: Mapped[int]
     energy: Mapped[int]
-    created_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow)
+    created_at: Mapped[datetime] = mapped_column(
+        DateTime, default=datetime.utcnow
+    )
