@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# SQLite
+*.db
+*.sqlite3
+
+# Environment
+.env
+.env.*
+
+# Virtual env
+venv/
+.venv/
+
+# PyCharm
+.idea/
+
+# pytest
+.pytest_cache/
+.cache/
+.coverage
+htmlcov/
+nosetests.xml
+coverage.xml
+*.cover
+*.log
